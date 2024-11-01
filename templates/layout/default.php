@@ -27,32 +27,34 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('style.css') ?>
-
+    <?= $this->Html->css('https://cdn.jsdelivr.net/npm/@cscfi/csc-ui@2.2.11/dist/styles/css/theme.css') ?>
+    <?= $this->Html->script('https://unpkg.com/vue@3.1.1/dist/vue.global.prod.js', array('block' => 'scriptBottom')); ?>
+    <?= $this->Html->script('https://cdn.jsdelivr.net/npm/@cscfi/csc-ui@2.2.11/dist/csc-ui/csc-ui.esm.js', array('type'=>'module','block' => 'scriptBottom')); ?>
+    <?= $this->Html->script('https://unpkg.com/vue@3.1.1/dist/vue.global.prod.js', array('block' => 'scriptBottom')); ?>
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
 </head>
 <body>
-    <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="title-area large-3 medium-4 columns">
-            <li class="name">
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
-            </li>
-        </ul>
-        <div class="top-bar-section">
-            <ul class="right">
-                <li><a target="_blank" href="https://book.cakephp.org/3/">Documentation</a></li>
-                <li><a target="_blank" href="https://api.cakephp.org/3.0/">API</a></li>
-            </ul>
-        </div>
-    </nav>
+  <c-main>
+  <c-toolbar>
+    <c-csc-logo />
+    Test RP
+  </c-toolbar>
+  <c-side-navigation>
+    <!-- <c-side-navigation-item><c-link href="/secure/" style="--c-link-color: var(--c-warning-600)">SAML2 Attribute test</c-link></c-side-navigation-item> -->
+
+    <c-side-navigation-title>OIDC RR</c-side-navigation-title>
+<c-side-navigation-item>
+      RP
+      <c-sub-navigation-item>ADD</c-sub-navigation-item>      
+    </c-side-navigation-item>
+  </c-side-navigation>
     <?= $this->Flash->render() ?>
-    <div class="container clearfix">
+  <c-page>
         <?= $this->fetch('content') ?>
-    </div>
-    <footer>
-    </footer>
+  </c-page>
+  </c-main>
+ <?= $this->fetch('scriptBottom');?>
+ </div>
 </body>
 </html>

@@ -22,7 +22,7 @@ use Cake\Http\Exception\NotFoundException;
 
 $this->disableAutoLayout();
 
-$checkConnection = function (string $name) {
+/*$checkConnection = function (string $name) {
     $error = null;
     $connected = false;
     try {
@@ -56,7 +56,7 @@ if (!Configure::read('debug')) :
     );
 endif;
 
-?>
+ */?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -178,19 +178,19 @@ endif;
                     <div class="column">
                         <h4>DebugKit</h4>
                         <ul>
-                        <?php if (Plugin::isLoaded('DebugKit')) : ?>
+                        <?php // if (Plugin::isLoaded('DebugKit')) : ?>
                             <li class="bullet success">DebugKit is loaded.</li>
                             <?php
-                            $result = $checkConnection('debug_kit');
+                            // $result = $checkConnection('debug_kit');
                             ?>
-                            <?php if ($result['connected']) : ?>
+                            <?php //if ($result['connected']) : ?>
                                 <li class="bullet success">DebugKit can connect to the database.</li>
-                            <?php else : ?>
+                            <?php //else : ?>
                                 <li class="bullet problem">There are configuration problems present which need to be fixed:<br /><?= $result['error'] ?></li>
-                            <?php endif; ?>
-                        <?php else : ?>
+                            <?php // endif; ?>
+                        <?php //else : ?>
                             <li class="bullet problem">DebugKit is <strong>not</strong> loaded.</li>
-                        <?php endif; ?>
+                        <?php //endif; ?>
                         </ul>
                     </div>
                 </div>
