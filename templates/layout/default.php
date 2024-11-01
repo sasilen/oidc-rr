@@ -41,17 +41,31 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     Test RP
   </c-toolbar>
   <c-side-navigation>
-    <!-- <c-side-navigation-item><c-link href="/secure/" style="--c-link-color: var(--c-warning-600)">SAML2 Attribute test</c-link></c-side-navigation-item> -->
-
     <c-side-navigation-title>OIDC RR</c-side-navigation-title>
-<c-side-navigation-item>
-      RP
-      <c-sub-navigation-item>ADD</c-sub-navigation-item>      
+    <c-side-navigation-item>
+      Actions
+      <c-sub-navigation-item><a href="/rps">List Relying parties</a></c-sub-navigation-item>
+      <c-sub-navigation-item><a href="/rps/add">New Relying Party</a></c-sub-navigation-item>
+      <c-sub-navigation-item><a href="/resoureservers">List Resource Servers</a></c-sub-navigation-item>
+      <c-sub-navigation-item><a href="/resoureservers/add">Add Resource Server</a></c-sub-navigation-item>
+    </c-side-navigation-item><c-side-navigation-item>
+      AdminAction (Wide effect)
+      <c-sub-navigation-item><a href="/grant-types">Grant Types</a></c-sub-navigation-item>
+      <c-sub-navigation-item><a href="/response-types">Response Type</a></c-sub-navigation-item>
+      <c-sub-navigation-item><a href="/scopes">Scopes</a></c-sub-navigation-item>
+      <c-sub-navigation-item><a href="/token-endpoint-authentication-methods">TokenEndpointAuthenticationMethods</a></c-sub-navigation-item>
+      <c-sub-navigation-item><a href="/allowed-authentication-methods">AllowedAuthenticationMethods</a></c-sub-navigation-item>
+    </c-side-navigation-item><c-side-navigation-item>
+      Federations
+      <c-sub-navigation-item><a href="/api/rps.json?fdid=1">CSC AAI</a></c-sub-navigation-item>
+      <c-sub-navigation-item><a href="/api/rps.json?fdid=2">CSC AAI Test</a></c-sub-navigation-item>
+      <c-sub-navigation-item><a href="/api/rps.json?fdid=3">Haka OIDC Test</a></c-sub-navigation-item>
+      <c-sub-navigation-item><a href="/api/rps.json?fdid=4">CSC IdP Internal</a></c-sub-navigation-item>
     </c-side-navigation-item>
   </c-side-navigation>
-    <?= $this->Flash->render() ?>
+  <?= $this->Flash->render() ?>
   <c-page>
-        <?= $this->fetch('content') ?>
+    <?= $this->fetch('content') ?>
   </c-page>
   </c-main>
  <?= $this->fetch('scriptBottom');?>
